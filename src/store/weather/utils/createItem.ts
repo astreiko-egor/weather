@@ -34,7 +34,7 @@ export default (data: IResponse, type: string, dateAdd?: Date) => {
           lat: data.coord.lat,
           lng: data.coord.lon,
         } as IGeoPosition,
-        data: dataItem,
+        data: { ...dataItem },
       }
     : ({
         data: { ...dataItem },

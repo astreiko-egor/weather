@@ -39,7 +39,7 @@ export const loadWeatherCurrentPositionItem = (
         })
       );
     } else if (payload.type === 'update') {
-      commit('updateWeatherCurrentPositionItem', updateItem(data, 'current'));
+      commit('receiveWeatherCurrentPositionItem', updateItem(data, 'current'));
     }
   });
 };

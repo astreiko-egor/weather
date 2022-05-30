@@ -15,15 +15,11 @@ export const receiveWeatherCurrentPositionItem = (
   if (payload.geoPosition) {
     state.currentPositionItem.geoPosition = payload.geoPosition;
   }
-  state.currentPositionItem.weather.data = payload.data;
-};
 
-export const updateWeatherCurrentPositionItem = (
-  state: IState,
-  payload: { id: string; listInfoItems: IDataWeather[] }
-) => {
-  state.currentPositionItem.weather.data.id = payload.id;
-  state.currentPositionItem.weather.data.listInfoItems = payload.listInfoItems;
+  state.currentPositionItem.weather.data = {
+    ...state.currentPositionItem.weather.data,
+    ...payload.data,
+  };
 };
 
 export const receiveWeatherDefaultItem = (
