@@ -1,14 +1,10 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
+import weather from './weather';
 
-export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
+export const createStoreObj = {
   modules: {
-  }
-})
+    weather: weather,
+  },
+};
+
+export default createStore(createStoreObj);
